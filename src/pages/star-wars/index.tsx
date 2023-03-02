@@ -1,10 +1,10 @@
 import React from "react"
-import { useQuery } from '@apollo/client';
+import { List } from "../../components/List";
 import client from "../../client";
-import './index.css';
+import { useQuery } from '@apollo/client';
 import { GET_PERSON } from "./graphql";
 import { Movies, People } from "../types/types";
-import { List } from "../../components/List";
+import './index.css';
 
 export const StarWars = () => {
 
