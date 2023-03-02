@@ -1,0 +1,28 @@
+
+.list-container {
+  width: 100%;;
+  padding: 10px;
+}
+
+.title{
+  color: #DAC317;
+}
+
+.name {
+  color: #DAC317;
+}
+
+.description {
+  color: #333333;
+}
+
+.details {
+  display: flex;
+  padding: 10px;
+  flex-direction: row;
+}
+
+.content-description {
+  padding: 10px;
+}
+

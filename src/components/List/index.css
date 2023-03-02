@@ -1,0 +1,48 @@
+
+.list-container {
+  width: 100%;;
+  padding: 10px;
+}
+
+.title{
+  color: #DAC317;
+}
+
+.name {
+  color: #DAC317;
+}
+
+.description {
+  color: #333333;
+}
+
+.details {
+  display: flex;
+  padding: 10px;
+  flex-direction: row;
+}
+
+.content-description {
+  padding: 10px;
+}
+
+table {
+  width: 100%;
+}
+
+th {
+  border-bottom: 0.5px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+  align-items: center;
+  flex-wrap: nowrap;
+  background-color: #f2f2f2;
+}
+
+td {
+  border-bottom: 0.5px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+  align-items: center;
+  flex-wrap: nowrap   
+} 
