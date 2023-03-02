@@ -7,16 +7,18 @@ export const StarWarsRest = () => {
   const [allPeople, setAllPeople] = useState([]);
 
   async function fetchPeople() {
-    let res = await fetch('https://swapi.py4e.com/api/people/')
+    const res = await fetch('https://swapi.py4e.com/api/people/')
 
-    let dataPeople = await res.json()
-
+    const dataPeople = await res.json()
+    
     setAllPeople(dataPeople.results)
   }
 
   useEffect(() => {
    fetchPeople()
   }, [])
+
+  if (!allPeople.length) return <p>Loading...</p>;
 
   return (  
     <div className="list-container">
@@ -30,12 +32,14 @@ export const StarWarsRest = () => {
             <th className="name">Gender</th>
           </tr>
         </thead>
-      <tbody>
-      { allPeople.length && allPeople.map((item: PeopleRest) => (
-        <List key={item.id} name={item.name} birth={item.birth_year} gender={item.gender} />
-        ))
-      }
-      </tbody>
+        <tbody>
+        { allPeople.map((item: PeopleRest) => {
+          const parts = item.url.split('/')
+          const id = parts[parts.length - 2]
+          return (<List key={id} name={item.name} birth={item.birth_year} gender={item.gender} />)
+        })
+        }  
+        </tbody>
       </table>
       </div>
     </div>

@@ -20,6 +20,6 @@ export interface PeopleRest {
   name: string,
   birth_year: string,
   gender: string,
-  films: Movies[]
-  
+  films: Movies[],
+  url: string
 }
