@@ -1,31 +1,4 @@
 
-.list-container {
-  width: 100%;;
-  padding: 10px;
-}
-
-.title{
-  color: #DAC317;
-}
-
-.name {
-  color: #DAC317;
-}
-
-.description {
-  color: #333333;
-}
-
-.details {
-  display: flex;
-  padding: 10px;
-  flex-direction: row;
-}
-
-.content-description {
-  padding: 10px;
-}
-
 table {
   width: 100%;
 }
@@ -40,9 +13,35 @@ th {
 }
 
 td {
-  border-bottom: 0.5px solid #dddddd;
   text-align: left;
   padding: 8px;
   align-items: center;
-  flex-wrap: nowrap   
 } 
+
+ tr:nth-child(2n){
+  background-color: #f2f2f2;
+}
+/*
+td:nth-child(1){
+  width: 20%;
+}
+td:nth-child(2){
+  width: 20%;
+}
+td:nth-child(3){
+  width: 20%;
+}
+td:nth-child(4){
+  width: 40%;
+} */
+
+@media screen and (max-width: 480px) {
+  thead {
+    display: none;
+  }
+  td {
+    display: flex;
+    flex-direction: column;
+    text-align: center
+  }
+}
