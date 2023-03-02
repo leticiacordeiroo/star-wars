@@ -27,10 +27,10 @@ export const StarWars = () => {
           </tr>
         </thead>
         <tbody>
-        { data.allPeople.people.length && data.allPeople.people.map((item: People) => (
-          <List key={item.id} name={item.name} birth={item.birthYear} gender={item.gender} movie={item.filmConnection.films.map((i: Movies, index) => ` ${i.title}${index === item.filmConnection.films.length -1 ? ` ` : `,` }`)} />
-          ))
-        }
+          { data.allPeople.people.length && data.allPeople.people.map((item: People) => (
+            <List key={item.id} name={item.name} birth={item.birthYear} gender={item.gender} movie={item.filmConnection.films.map((i: Movies, index) => ` ${i.title}${index === item.filmConnection.films.length -1 ? ` ` : `,` }`)} />
+            ))
+          }
         </tbody> 
       </table> 
       </div>
