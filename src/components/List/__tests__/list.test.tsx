@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react"
-import { render } from "@testing-library/react"
+import { render, screen } from "@testing-library/react"
 import { List } from "../index"
 
 const nameMock = "Luke"
@@ -12,7 +12,19 @@ const withWrapper = (children: ReactNode) => {
 
 describe("list-component-tests", () => {
   it("should be render component list", () => {
-    const { getAllByTestId } = render(withWrapper(<List name={nameMock} birth={birthMock} gender={genderMock} />))
-    expect(getAllByTestId).toBeTruthy()
+    render(withWrapper(<List name={nameMock} birth={birthMock} gender={genderMock} />))
+    expect(screen.getAllByTestId).toBeTruthy()
+  })
+  it("should be render props name", () => {
+    render(withWrapper(<List name={nameMock} birth={birthMock} gender={genderMock} />))
+    expect(screen.getByText("Luke").textContent).toEqual('Luke')
+  })
+  it("should be render props birth", () => {
+    render(withWrapper(<List name={nameMock} birth={birthMock} gender={genderMock} />))
+    expect(screen.getByText("19BBY").textContent).toEqual('19BBY')
+  })
+  it("should be render props gender", () => {
+    render(withWrapper(<List name={nameMock} birth={birthMock} gender={genderMock} />))
+    expect(screen.getByText("male").textContent).toEqual('male')
   })
 })

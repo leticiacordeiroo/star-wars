@@ -11,7 +11,7 @@ export interface ListProps {
 export const List = ({ name, birth, gender, movie }: ListProps)  => {
   return (
     <tr data-testid="list">
-      <td className="description">{name}</td>
+      <td data-testid="name" className="description">{name}</td>
       <td className="description">{birth}</td>
       <td className="description">{gender}</td>
       {movie && <td className="description">{movie}</td>}
